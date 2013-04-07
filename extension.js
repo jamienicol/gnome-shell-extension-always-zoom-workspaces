@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Jamie Nicol <jamie@thenicols.net>
+ * Copyright (C) 2012, 2013 Jamie Nicol <jamie@thenicols.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,23 +17,21 @@
 
 const Main = imports.ui.main;
 
-let workspacesDisplay;
+let thumbnailsSlider;
 let savedFunc;
 
 function init() {
-    workspacesDisplay = Main.overview._viewSelector._workspacesDisplay;
+    thumbnailsSlider = Main.overview._controls._thumbnailsSlider;
 }
 
 function enable() {
-    savedFunc = workspacesDisplay._updateAlwaysZoom;
+    savedFunc = thumbnailsSlider._getAlwaysZoomOut;
 
-    workspacesDisplay._updateAlwaysZoom = function() {
+    thumbnailsSlider._getAlwaysZoomOut = function() {
         return true;
     };
-    workspacesDisplay._alwaysZoomOut = true;
 }
 
 function disable() {
-    workspacesDisplay._updateAlwaysZoom = savedFunc;
-    workspacesDisplay._updateAlwaysZoom();
+    thumbnailsSlider._getAlwaysZoomOut = savedFunc;
 }
