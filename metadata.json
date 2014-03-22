@@ -3,5 +3,5 @@
     "name": "Always Zoom Workspaces",
     "description": "Ensure the workspaces view is always expanded.",
 	"url": "http://github.com/jamienicol/gnome-shell-extension-always-zoom-workspaces",
-    "shell-version": ["3.6.0"]
+    "shell-version": ["3.4"]
 }

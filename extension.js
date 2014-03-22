@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Jamie Nicol <jamie@thenicols.net>
+ * Copyright (C) 2014 Jamie Nicol <jamie@thenicols.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ let workspacesDisplay;
 let savedFunc;
 
 function init() {
-    workspacesDisplay = Main.overview._viewSelector._workspacesDisplay;
+    workspacesDisplay = Main.overview._workspacesDisplay;
 }
 
 function enable() {
