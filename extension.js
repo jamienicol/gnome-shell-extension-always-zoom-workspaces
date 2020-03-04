@@ -21,7 +21,13 @@ let thumbnailsSlider;
 let savedFunc;
 
 function init() {
-    thumbnailsSlider = Main.overview._controls._thumbnailsSlider;
+    if (Main.overview._controls) {
+        // GNOME <= 3.34
+        thumbnailsSlider = Main.overview._controls._thumbnailsSlider;
+    } else {
+        // GNOME >= 3.36
+        thumbnailsSlider = Main.overview._overview._controls._thumbnailsSlider
+    }
 }
 
 function enable() {
